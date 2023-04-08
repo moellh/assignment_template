@@ -1,4 +1,4 @@
-# Abgabetemplate für $\LaTeX$-Dokumente
+# Template für Abgaben mit $\LaTeX$
 
 ## Neue Commands
 
