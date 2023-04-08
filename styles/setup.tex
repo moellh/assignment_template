@@ -1,0 +1,90 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[a4paper,lmargin={2cm},rmargin={2cm},tmargin={2.5cm},bmargin={2.5cm},headheight = {4cm}]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath,amssymb,amstext,amsthm}
+\usepackage{mathtools}
+\usepackage{stackengine}
+\usepackage[printonlyused, nohyperlinks, nolist]{acronym}
+\usepackage{soul}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage[pdftex,hyperref,dvipsnames,svgnames]{xcolor}
+\usepackage{listings}
+\usepackage[lined,algonl,boxed]{algorithm2e}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage[inline]{enumitem}
+\usepackage[headsepline]{scrlayer-scrpage}
+\usepackage{subfig}
+\usepackage{stmaryrd}
+\usepackage{multirow}
+\usepackage{float}
+
+\pagestyle{scrheadings} 
+%\usetikzlibrary{automata,positioning}
+\setuldepth{a}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{.4em}
+\setlength{\fboxsep}{.3cm}
+\newcounter{exnum}
+\setcounter{exnum}{1}
+\ihead{\authors}
+\chead{\textbf{\module}\\\groupAndSheet}
+\ohead{\semester}
+
+\hypersetup{
+    colorlinks,
+    linkcolor={black},
+    citecolor={black},
+    urlcolor={black}
+}
+\setitemize{itemsep=0pt}
+
+\definecolor{commentcolor}{rgb}{0,0.6,0}
+\definecolor{graycolor}{rgb}{0.5,0.5,0.5}
+\definecolor{keywordcolor}{rgb}{0.50,0,0.75}
+\definecolor{backgroundcolor}{rgb}{0.98,0.98,0.97}
+\definecolor{stringcolor}{rgb}{0.3,0.6,0.2}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backgroundcolor},   
+    commentstyle=\color{commentcolor},
+    keywordstyle=\color{keywordcolor},
+    numberstyle=\tiny\color{graycolor},
+    stringstyle=\color{stringcolor},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=lines,
+    rulecolor=\color{graycolor},
+    xleftmargin=1cm,
+    xrightmargin=1cm
+}
+\lstset{style=mystyle}
+
+\newcommand{\surround}[1]{\begin{center}\noindent\fbox{ \parbox{.95\linewidth}{#1} }\end{center}}
+\newcommand{\tab}[1][0.5cm]{\hspace*{#1}}
+\newcommand{\seperate}[2]{\begin{description}[leftmargin=#1, style=nextline] #2 \end{description}}
+\newcommand{\nopic}[1][Please Insert Picture Here]{\begin{figure}[!h]\centering\includegraphics[width=0.6\textwidth]{styles/noPicture.png}\caption{#1}\end{figure}}
+\newcommand{\explain}[1]{{\small\textit{#1}}\vspace{.2cm}\\}
+\newcommand{\exercise}[1]{\section*{Aufgabe \theexnum\stepcounter{exnum}: #1}}
+\newcommand{\baseindent}[1]{\begin{addmargin}{.5cm} #1 \end{addmargin}}
+\newcommand{\code}[1]{\textcolor{keywordcolor}{\textbf{\texttt{#1}}}}
+\newcommand{\headline}[1]{\subsubsection*{\ul{#1}}}
+\newcommand{\largeheading}[1]{\vspace{.2cm}{\Large \sffamily \textbf{#1}}\vspace{.15cm}\\}
+
+%\renewcommand{\theenumi}{(\alph{enumi})}
+%\renewcommand{\labelenumi}{\text{\theenumi}}
