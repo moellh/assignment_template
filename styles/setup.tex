@@ -1,14 +1,12 @@
-\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
-\usepackage[a4paper,lmargin={2cm},rmargin={2cm},tmargin={2.5cm},bmargin={2.5cm},headheight = {4cm}]{geometry}
+\usepackage[a4paper,lmargin={1.5cm},rmargin={1.5cm},tmargin={2.7cm},bmargin={2.5cm},headheight = {3cm}]{geometry}
 \usepackage{graphicx}
-\usepackage{hyperref}
 \usepackage{amsmath,amssymb,amstext,amsthm}
 \usepackage{mathtools}
 \usepackage{stackengine}
 \usepackage[printonlyused, nohyperlinks, nolist]{acronym}
-\usepackage{soul}
+\usepackage{ulem}
+\usepackage{contour}
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{lmodern}
@@ -25,19 +23,25 @@
 \usepackage{stmaryrd}
 \usepackage{multirow}
 \usepackage{float}
-\usepackage{cmbright}
+\usepackage{txfonts}
+\usepackage[T1]{fontenc}
+% \usepackage[ngerman]{babel}
 
 \pagestyle{scrheadings} 
-%\usetikzlibrary{automata,positioning}
-\setuldepth{a}
+\renewcommand*{\headfont}{\normalfont}
+\setlength{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{.4em}
 \setlength{\fboxsep}{.3cm}
+
 \newcounter{exnum}
 \setcounter{exnum}{1}
-\ihead{\authors}
-\chead{\textbf{\module}\\\groupAndSheet}
-\ohead{\semester}
+% \theexnum\stepcounter{exnum}
+
+\ihead{Henrik Möllmann (MatrNr)}
+\chead{Sheet \thesheetnum}
+\ohead{Module-Identifier\\Group XY}
 
 \hypersetup{
     colorlinks,
@@ -50,7 +54,7 @@
 \definecolor{commentcolor}{rgb}{0,0.6,0}
 \definecolor{graycolor}{rgb}{0.5,0.5,0.5}
 \definecolor{keywordcolor}{rgb}{0.50,0,0.75}
-\definecolor{backgroundcolor}{rgb}{0.98,0.98,0.97}
+\definecolor{backgroundcolor}{rgb}{1,1,1}
 \definecolor{stringcolor}{rgb}{0.3,0.6,0.2}
 \lstdefinestyle{mystyle}{
     backgroundcolor=\color{backgroundcolor},   
@@ -79,13 +83,13 @@
 \newcommand{\surround}[1]{\begin{center}\noindent\fbox{ \parbox{.95\linewidth}{#1} }\end{center}}
 \newcommand{\tab}[1][0.5cm]{\hspace*{#1}}
 \newcommand{\seperate}[2]{\begin{description}[leftmargin=#1, style=nextline] #2 \end{description}}
-\newcommand{\nopic}[1][Please Insert Picture Here]{\begin{figure}[!h]\centering\includegraphics[width=0.6\textwidth]{styles/noPicture.png}\caption{#1}\end{figure}}
-\newcommand{\explain}[1]{{\small\textit{#1}}\vspace{.2cm}\\}
-\newcommand{\exercise}[1]{\section*{Aufgabe \theexnum\stepcounter{exnum}: #1}}
+\newcommand{\noimg}[1][No Caption Specified]{\begin{figure}[H]\centering\LARGE PICTURE MISSING \caption{#1}\end{figure}}
+\newcommand{\explain}[1]{{\small\textit{#1}}}
 \newcommand{\baseindent}[1]{\begin{addmargin}{.5cm} #1 \end{addmargin}}
 \newcommand{\code}[1]{\textcolor{keywordcolor}{\textbf{\texttt{#1}}}}
 \newcommand{\headline}[1]{\subsubsection*{\ul{#1}}}
 \newcommand{\largeheading}[1]{\vspace{.2cm}{\Large \sffamily \textbf{#1}}\vspace{.15cm}\\}
+\newcommand{\ul}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
 
-%\renewcommand{\theenumi}{(\alph{enumi})}
-%\renewcommand{\labelenumi}{\text{\theenumi}}
+% \renewcommand{\theenumi}{(\alph{enumi})}
+% \renewcommand{\labelenumi}{\text{\theenumi}}
