@@ -11,7 +11,6 @@
 \usepackage{tabularx}
 \usepackage{lmodern}
 \usepackage{graphicx}
-\usepackage[pdftex,hyperref,dvipsnames,svgnames]{xcolor}
 \usepackage{listings}
 \usepackage[lined,algonl,boxed]{algorithm2e}
 \usepackage{tikz}
@@ -23,8 +22,10 @@
 \usepackage{stmaryrd}
 \usepackage{multirow}
 \usepackage{float}
-\usepackage{txfonts}
 \usepackage[T1]{fontenc}
+\usepackage{txfonts}
+\usepackage{siunitx}
+\usepackage{adjustbox}
 % \usepackage[ngerman]{babel}
 
 \pagestyle{scrheadings} 
@@ -39,9 +40,10 @@
 \setcounter{exnum}{1}
 % \theexnum\stepcounter{exnum}
 
-\ihead{Henrik Möllmann (MatrNr)}
-\chead{Sheet \thesheetnum}
-\ohead{Module-Identifier\\Group XY}
+
+\ihead{\color{gray}Henrik Möllmann}
+\chead{\color{gray}Module}
+\ohead{\color{gray}Assignment Sheet \sheetnr}
 
 \hypersetup{
     colorlinks,
@@ -77,6 +79,7 @@
     rulecolor=\color{graycolor},
     xleftmargin=1cm,
     xrightmargin=1cm
+    columns=fullflexible
 }
 \lstset{style=mystyle}
 
@@ -84,12 +87,18 @@
 \newcommand{\tab}[1][0.5cm]{\hspace*{#1}}
 \newcommand{\seperate}[2]{\begin{description}[leftmargin=#1, style=nextline] #2 \end{description}}
 \newcommand{\noimg}[1][No Caption Specified]{\begin{figure}[H]\centering\LARGE PICTURE MISSING \caption{#1}\end{figure}}
-\newcommand{\explain}[1]{{\small\textit{#1}}}
+\newcommand{\explain}[1]{{\small\color{gray}\textit{#1}}}
+\newcommand{\exercise}[1]{\section*{Exercise \theexnum\stepcounter{exnum}: #1}}
 \newcommand{\baseindent}[1]{\begin{addmargin}{.5cm} #1 \end{addmargin}}
 \newcommand{\code}[1]{\textcolor{keywordcolor}{\textbf{\texttt{#1}}}}
 \newcommand{\headline}[1]{\subsubsection*{\ul{#1}}}
 \newcommand{\largeheading}[1]{\vspace{.2cm}{\Large \sffamily \textbf{#1}}\vspace{.15cm}\\}
 \newcommand{\ul}[1]{\uline{\phantom{#1}}\llap{\contour{white}{#1}}}
+\newcommand{\modd}{\operatorname{mod}}
 
-% \renewcommand{\theenumi}{(\alph{enumi})}
-% \renewcommand{\labelenumi}{\text{\theenumi}}
+\renewcommand{\theenumi}{(\alph{enumi})}
+\renewcommand{\labelenumi}{\text{\theenumi}}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+
+\lstset{escapeinside={@}{@}}
